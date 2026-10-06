@@ -1,15 +1,13 @@
 ---
 title: Welcome
 tags:
-- tag1
-- tag2
 ---
 <center>
-<font size= "6">(My Name) Datasheet</font><br>
+<font size= "6">Alessandro Marcolini's Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name</font><br>
+<font size= "8">Heart Rate Monitor</font><br>
 for<br>
-<font size= "5"> Team 204 </font><br>
+<font size= "5">Team 204</font><br>
 
 **Submission: month, DD, YYYY**
 </center>

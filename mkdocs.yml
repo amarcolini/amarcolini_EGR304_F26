@@ -59,11 +59,11 @@ extra_javascript:
 not_in_nav: |
   static
 
-copyright: "Copyright &copy; 2025 team-name-here"
+copyright: "Copyright &copy; 2026 Alessandro Marcolini"
 
 extra:
   generator: false
   social:
     - icon: fontawesome/regular/file-code
-      link: /2025_fall
-      name: 2023 Site
+      link: /2026_fall
+      name: 2026 Site
