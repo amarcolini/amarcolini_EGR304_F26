@@ -8,7 +8,7 @@ This schematic is design to support measuring blood pressure and displaying info
 
 
 ![schematic](image.png){style width:"350" height:"300;"}
-**FigureExampleSchematic 1:** The board schematic.
+**Figure 1:** The board schematic.
 
 
 ## Resouces
