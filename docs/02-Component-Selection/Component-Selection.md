@@ -1,8 +1,9 @@
 ---
-title: Component Selection Example
+title: Component Selection
 ---
+# Component Selection
 
-## Cuff Pressure Sensor
+## Pressure Sensor
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -10,7 +11,7 @@ title: Component Selection Example
 | ![](image_sensor2.webp)<br>\* Option 2. <br>\* STMicroelectronics MPX2050GP Unamplified Bridge Pressure Sensor <br>\* $23.87/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/stmicroelectronics/MPX2050GP/410891) | \* Unamplified Wheatstone bridge (0 to 40 mV output) satisfies the EGR 304 requirement for a custom non-trivial amplifier and filter circuit <br>\* Through-hole 4-SIP package with a 4.93mm barbed port is easy to solder on a Peralta PCB <br> \* Covers the ideal 0 to 50 kPa (0 to 375 mmHg) vented gauge pressure range | * Nearly 3x more expensive than the Omron 2SMPP-03 ($23.87 vs. $8.36) <br>\* Requires 10V, so 5V rail reduces output to 20 mV |
 | ![](image_sensor3.jpg)<br>\* Option 3. <br>\* Amphenol Advanced Sensors (NovaSensor) NPC-120T <br>\* $8.18/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/amphenol-advanced-sensors/NPC-120T/6044069) | \* Inexpensive ($8.18) <br>\* Very high maximum pressure (125PSI) minimizes chance of sensor breaking under unanticipated load <br> \* Robust voltage input (1-10V) | * Small SMD component may be difficult to solder on PCB <br>\* No built-in tube port will make attaching tubes difficult |
 
-*Table 1: Cuff Pressure Sensor component selection*
+*Table 1: Pressure Sensor component selection*
 
 **Choice:** Option 3: Amphenol Advanced Sensors (NovaSensor) NPC-120T
 

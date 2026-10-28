@@ -3,9 +3,8 @@ title: Power Budget
 ---
 
 ## Overview
-Write a overview of what you did and why you did a Power Budget.
-
-> Capture your power budge as a image to display. Take time to get clean breaks and a well organized layout.
+Since this project involves two separate actuators along with a sensor and a display, making a power budget is essential to make sure there is enough power
+for all the components to operate safely.
 
 ![budget1](budgetPg1.png){style width:"350" height:"300;"}
 
@@ -15,8 +14,8 @@ Write a overview of what you did and why you did a Power Budget.
 
 ## Conclusions
 
-From the prepare Power Budget, .....
+From the power budget, it was determined that the rated current draw of the two actuators is fairly low, leaving plenty of headroom with the selected power supply and voltage regulator.
 
 ## Resouces
 
-The power budget as a PDF download is available [*here*](PowerBudgetExample.pdf), and a Microsoft Excel Sheet [*here*](PowerBudgetExample.xlsx).
+The power budget as a PDF download is available [*here*](Power_Budget.pdf), and a Microsoft Excel Sheet [*here*](Power_Budget.zip).
