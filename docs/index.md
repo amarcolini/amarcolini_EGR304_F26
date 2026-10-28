@@ -9,24 +9,21 @@ as part of<br>
 for<br>
 <font size= "5">Team 204</font><br>
 
-**Submission: month, DD, YYYY**
+**Submission: October 28, 2026**
 </center>
 
 ## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
+This website documents my design process for creating my PCB as a part of my team, Heart Rate Monitor.
 
 ### Project Summary
 
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+The goal of this team project is to create a heart rate monitor/health monitoring system prototype that could potentially be 
+made into a viable product. The project is made up of a heart rate monitor, a speaker/alert system, a temperature monitor, a blood 
+pressure sensor, and a display. You can find more information in the [team report.](https://asu-egr304-2026-f-204.github.io/ASU-EGR304-2026-F-204/)
 
 
 ### My Contribution
 
-* This needs to be updated to reflect a team introduction
-* Content should also help an unfamiliar reader navigate to areas of interest. Information like:
-
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
-
-For all the sections
+My contribution to the team project is a PCB responsible for measuring blood pressure and displaying information on an LCD. The pages in the navigation
+above contain all the details regarding to my design process for that contribution.
