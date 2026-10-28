@@ -2,25 +2,23 @@
 title: Component Selection Example
 ---
 
-*Table 1: Cuff Pressure Sensor component selection*
-
-**Cuff Pressure Sensor**
+## Cuff Pressure Sensor
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | ![](image_sensor1.jpg)<br>Option 1.<br> Aratas (Omron) 2SMPP-03 MEMS Gauge Blood Pressure Sensor<br>$8.36/each<br>[link to product](https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/2SMPP-03/3671590) | \* Inexpensive ($8.36), keeping total subsystem cost well under the $60 course budget<br>\* Unamplified piezoresistive Wheatstone bridge output (0 to 42 mV) directly satisfies the EGR 304 Permitted Analog Sensor requirement for custom amplification and active filtering<br>\* Purpose-built for medical blood pressure cuffs (0 to 50 kPa / 0 to 375 mmHg gauge range) with a built-in tube port | \* Requires a 3-op-amp instrumentation amplifier stage in addition to an active band-pass filter<br>\* Uses surface mounting instead of through-hole pins |
 | ![](image_sensor2.webp)<br>\* Option 2. <br>\* STMicroelectronics MPX2050GP Unamplified Bridge Pressure Sensor <br>\* $23.87/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/stmicroelectronics/MPX2050GP/410891) | \* Unamplified Wheatstone bridge (0 to 40 mV output) satisfies the EGR 304 requirement for a custom non-trivial amplifier and filter circuit <br>\* Through-hole 4-SIP package with a 4.93mm barbed port is easy to solder on a Peralta PCB <br> \* Covers the ideal 0 to 50 kPa (0 to 375 mmHg) vented gauge pressure range | * Nearly 3x more expensive than the Omron 2SMPP-03 ($23.87 vs. $8.36) <br>\* Requires 10V, so 5V rail reduces output to 20 mV |
-| ![](image_sensor3.webp)<br>\* Option 3. <br>\* STMicroelectronics MPX5050GP Integrated Amplified Pressure Sensor <br>\* $29.98/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/stmicroelectronics/MPX5050GP/464058) | \* Pre-amplified 0.2V to 4.7V linear output interfaces directly with a 5V ADC for static pressure reading <br>\* Through-hole 6-SIP package with a barbed tube port <br> \* Operates natively from a regulated 5V supply | * Built-in signal conditioning violates the EGR 304 Permitted Analog Sensor rule unless paired with a high-gain AC band-pass filter stage <br>\* High unit cost ($29.98) consumes half of the $60 individual budget |
+| ![](image_sensor3.jpg)<br>\* Option 3. <br>\* Amphenol Advanced Sensors (NovaSensor) NPC-120T <br>\* $8.18/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/amphenol-advanced-sensors/NPC-120T/6044069) | \* Inexpensive ($8.18) <br>\* Very high maximum pressure (125PSI) minimizes chance of sensor breaking under unanticipated load <br> \* Robust voltage input (1-10V) | * Small SMD component may be difficult to solder on PCB <br>\* No built-in tube port will make attaching tubes difficult |
 
-**Choice:** Option 1: Aratas (Omron) 2SMPP-03 MEMS Gauge Blood Pressure Sensor
+*Table 1: Cuff Pressure Sensor component selection*
 
-**Rationale:** Option 3 doesn't meet course requirements, and Option 1 is cheaper than Option 2 while being explicitly designed for the intended purpose.
+**Choice:** Option 3: Amphenol Advanced Sensors (NovaSensor) NPC-120T
+
+**Rationale:** Option 2 is much too expensive, and between Option 1 and Option 3, Option 3 is more robust while also being slightly cheaper.
 
 ---
 
-*Table 2: Operational Amplifier component selection*
-
-**Operational Amplifier (Op Amp)**
+## Operational Amplifier (Op Amp)
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -28,15 +26,15 @@ title: Component Selection Example
 | ![](image_opamp2.webp)<br>\* Option 2. <br>\* Microchip MCP6002-I/P Dual Rail-to-Rail Op Amp (8-PDIP) <br>\* $0.45/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/microchip-technology/MCP6002-I-P/500875) | \* Compact 8-pin PDIP through-hole package is very easy to breadboard and solder <br>\* Full 0V to 5V rail-to-rail input and output swing maximizes PIC18F57Q43 ADC resolution <br> \* Ultra-low 100 uA quiescent current per channel | * Only contains 2 op-amp channels, requiring two separate chips if building a 3-op-amp differential instrumentation amplifier plus an active filter stage <br>\* Maximum supply voltage is limited to 6.0V |
 | ![](image_opamp3.webp)<br>\* Option 3. <br>\* Texas Instruments LM358P Dual General-Purpose Op Amp (8-PDIP) <br>\* $0.33/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM358P/277042) | \* Wide 3V to 30V supply voltage range tolerates either the 5V or 9V power rail without damage <br>\* Very inexpensive ($0.33) in a standard 8-PDIP through-hole package <br> \* Low 500 uA supply current | * Not rail-to-rail output: saturates at roughly 3.5V when powered from a 5V rail, losing 30% of the PIC18F57Q43 ADC dynamic range <br>\* Contains only 2 channels and exhibits higher input bias current (20 nA vs. 1 pA CMOS) |
 
+*Table 2: Operational Amplifier component selection*
+
 **Choice:** Option 1: Microchip MCP6004-I/P Quad Rail-to-Rail Op Amp (14-PDIP)
 
 **Rationale:** Option 1 is already familiar and known to function, and the additional Op Amps in the package allow for additional signal processing if needed.
 
 ---
 
-*Table 3: Display component selection*
-
-**Character LCD Display**
+## Character LCD Display
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -44,15 +42,16 @@ title: Component Selection Example
 | ![](image_lcd2.jpg)<br>\* Option 2. <br>\* Newhaven Display NHD-0216K1Z-FL-YBW 16x2 Character LCD <br>\* $7.83/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-0216K1Z-FL-YBW/1701171) | \* Direct 5V GPIO parallel interface (ST7066U controller) with complete mechanical and timing datasheets on DigiKey <br>\* High-contrast STN transflective display with yellow-green backlight <br> \* Standard 80mm x 36mm footprint fits within the 100mm x 100mm PCB limit | * Slightly more expensive ($7.83 vs. $7.44) for identical 16x2 character functionality <br>\* Also requires 6 GPIO pins and an external contrast resistor divider or potentiometer |
 | ![](image_lcd3.webp)<br>\* Option 3. <br>\* Newhaven Display NHD-0216K1Z-NSW-BBW-L 16x2 White-on-Blue LCD <br>\* $7.44/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-0216K1Z-NSW-BBW-L/1701179) | \* Same low $7.44 price point and 5V parallel GPIO compatibility <br>\* Crisp white text on a blue background provides modern medical aesthetics <br> \* No daughterboard or serial backpack required | * Transmissive mode requires the LED backlight to be powered at all times in order to read the characters <br>\* Uses 6 digital I/O pins on the microcontroller |
 
-**Choice:** Option 1: Lumex LCM-S01602DTR/M 16x2 Character LCD Module
+*Table 3: Display component selection*
 
-**Rationale:** Option 1 is tied for lowest price but is easier to read than Option 3.
+**Choice:** Option 2: Newhaven Display NHD-0216K1Z-FL-YBW 16x2 Character LCD
+
+**Rationale:** Option 1 is out of stock, and between Option 2 and Option 3, Option 2 is transflective, meaning it is more visible in
+higher light conditions.
 
 ---
 
-*Table 4: H-Bridge Motor Driver component selection*
-
-**H-Bridge Actuator Driver**
+## H-Bridge Actuator Driver
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -60,15 +59,15 @@ title: Component Selection Example
 | ![](image_hbridge2.webp)<br>\* Option 2. <br>\* STMicroelectronics L293D Push-Pull Four-Channel Driver IC (16-PDIP) <br>\* $6.61/each <br>\* [Link to product](https://www.st.com/en/motor-drivers/l293d.html) | \* Explicitly named in the EGR 304 syllabus as an approved complex motor driver IC<br> \* Can be requested as a free sample directly from STMicroelectronics | * Lower continuous output current rating (600 mA per channel), leaving less thermal margin for a 500 mA air pump <br>\* Higher unit retail price ($6.61 vs. $4.39) |
 | ![](image_hbridge3.webp)<br>\* Option 3. <br>\* Custom Dual Low-Side Switch using 2x Infineon IRLZ44NPBF Logic N-MOSFETs <br>\* $3.08/each ($6.16 for 2) <br>\* [Link to product](https://www.digikey.com/en/products/detail/infineon-technologies/IRLZ44NPBF/811808) | \* Very low 22 mOhm on-resistance in a rugged TO-220 through-hole package <br>\* True 5V logic-level gate drive from PIC18F57Q43 PWM pins <br> \* High 47A current rating never overheats under pump loads | * Does not use a complex motor driver IC as recommended in the Permitted Actuators guidelines <br>\* Requires external flyback diodes and gate resistors on the PCB, and passes the full 9V supply to 6V actuators if PWM is set to 100% |
 
+*Table 4: H-Bridge Motor Driver component selection*
+
 **Choice:** Option 1: Fairchild Semiconductor FAN8100N Dual H-Bridge
 
 **Rationale:** Option 1 is the lowest cost and is already familiar and proven to work.
 
 ---
 
-*Table 5: DC Air Pump component selection*
-
-**DC Air Pump**
+## DC Air Pump
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -76,15 +75,15 @@ title: Component Selection Example
 | ![](image_pump2.jpg)<br>\* Option 2. <br>\* Adafruit 4700 Mini DC Air Pump and Vacuum Motor (0.5 LPM) <br>\* $6.95/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/adafruit-industries-llc/4700/13170956) | \* Lower current draw (~300 mA) reduces load on the 9V power supply <br>\* Ultra-compact footprint and $1.00 lower cost ($6.95) <br> \* Includes barbed ports for silicone tubing | * Low 0.5 L/min flow rate is 5x slower than Option 1 and struggles to reach 180 mmHg when fighting a constant bleed orifice <br>\* Smaller motor wears out faster under high back-pressure |
 | ![](image_pump3.jpg)<br>\* Option 3. <br>\* SparkFun ROB-10398 12V DC Vacuum and Air Pump <br>\* $26.85/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/sparkfun-electronics/10398/5684377) | \* High flow rate and 16 inHg (~406 mmHg) pressure capability <br>\* 12V motor rating cannot be over-volted by a 9V supply <br> \* Full datasheet available on DigiKey | * Over 3x more expensive ($26.85 vs. $7.95), which would push our BOM close to the $60 budget limit <br>\* Under-driven on a 9V supply (~7.2V after H-Bridge drop), operating below its rated speed |
 
+*Table 5: DC Air Pump component selection*
+
 **Choice:** Option 1: Adafruit 4699 (ZR370-02PM) 4.5V-6V DC Diaphragm Air Pump
 
 **Rationale:** Option 1 is the cheapest option that still has the required flow rate.
 
 ---
 
-*Table 6: Solenoid Air Valve component selection*
-
-**Solenoid Air Valve**
+## Solenoid Air Valve
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -92,15 +91,15 @@ title: Component Selection Example
 | ![](image_valve2.png)<br>\* Option 2. <br>\* DFRobot DFR0866 6V 2-Position 3-Way Air Solenoid Valve <br>\* $4.00/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/dfrobot/DFR0866/15283079) | \* Identical 3-port pneumatic switching behavior suitable for cuff exhaust control <br>\* Low coil current (~220-350 mA at 6V DC) <br> \* Stocked directly by DigiKey | * Costs 35% more ($4.00 vs. $2.95) than Option 1 for the same form factor and coil rating <br>\* Shorter wire leads require extension to reach the PCB terminal block |
 | ![](image_valve3.jpg)<br>\* Option 3. <br>\* SparkFun ROB-10456 12V 2-Way Normally Closed Solenoid Valve <br>\* $9.62/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/sparkfun-electronics/10456/5684378) | \* Rugged valve body with standard 0.25-inch quick-disconnect spade terminals <br>\* Rated up to 116 PSI maximum pressure <br> \* Cannot be over-volted by a 9V rail | * Unsafe Normally Closed (NC) configuration traps pressure in the cuff if power fails <br>\* Pilot-operated liquid diaphragm requires at least 2.9 PSI (150 mmHg) pressure differential just to open and uses bulky 3/4-inch NPT pipe threads |
 
+*Table 6: Solenoid Air Valve component selection*
+
 **Choice:** Option 1: Adafruit 4663 (FA0520E) 6V 3-Port Solenoid Air Release Valve
 
 **Rationale:** Option 1 is the cheapest option that is also normally open (NO).
 
 ---
 
-*Table 7: 5V Linear Voltage Regulator component selection*
-
-**5V 1.5A Linear Voltage Regulator**
+## 5V 1.5A Linear Voltage Regulator
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -108,22 +107,46 @@ title: Component Selection Example
 | ![](image_reg2.webp)<br>\* Option 2. <br>\* Texas Instruments LM2940CT-5.0/NOPB 5V 1.0A LDO Linear Regulator <br>\* $1.09/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2940CT-5-0-NOPB/32575) | \* Low dropout voltage (0.5V typical) maintains a stable 5V rail even if the input sags to 6.0V <br>\* Includes reverse-battery protection in a standard TO-220-3 package <br> \* Easily handles our ~134 mA (with 25% margin) 5V rail load | * Lower maximum output current rating (1.0A vs. 1.5A on the L7805CV) and currently backordered on DigiKey <br>\* Requires a >=22 uF output capacitor within a strict ESR window (0.1 to 5 Ohm) to prevent oscillation |
 | ![](image_reg3.webp)<br>\* Option 3. <br>\* Texas Instruments LM317T/NOPB 1.25V-37V 1.5A Adjustable Linear Regulator <br>\* $1.29/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM317T-NOPB/6178) | \* Matches the 1.5A output current capability in a through-hole TO-220-3 package <br>\* Output voltage can be tuned with two external resistors <br> \* Built-in current limiting and thermal overload protection | * Requires two external precision resistors to set 5.0V; a cold solder joint on the ADJ pin could cause the output to jump toward 9V and destroy the PIC18F57Q43 and MCP6004 <br>\* Costs more than twice as much as the fixed L7805CV ($1.29 vs. $0.55) |
 
+*Table 7: 5V Linear Voltage Regulator component selection*
+
 **Choice:** Option 1: STMicroelectronics L7805CV 5V 1.5A Fixed Linear Voltage Regulator
 
 **Rationale:** Option 1 is the cheapest and meets all requirements.
 
 ---
 
-*Table 8: 9V External Power Supply component selection*
-
-**9V External Power Supply**
+## 9V External Power Supply
 
 | **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image_psu1.jpg)<br>Option 1.<br> Bel Power Solutions SMI18-9-V-P5 9V 2.0A (18W) AC/DC Wall Adapter<br>$23.11/each<br>[link to product](https://www.digikey.com/en/products/detail/bel-power-solutions/SMI18-9-V-P5/5417773) | \* Supplies up to 2,000 mA at 9V DC, easily covering our 1,240 mA worst-case system load (including the mandatory 25% Power Budget safety margin) with +760 mA to spare<br>\* Standard 2.1mm x 5.5mm center-positive barrel plug connects directly to a PCB barrel jack<br>\* Complete UL/CE safety certifications and DigiKey datasheet | \* Costs $23.11, making it the single largest item in our $55.35 total BOM<br>\* Requires connection to a 120V AC wall outlet during tabletop demonstrations |
-| ![](image_psu2.jpg)<br>\* Option 2. <br>\* SparkFun TOL-15314 9V 650mA AC/DC Wall Adapter <br>\* $9.25/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/sparkfun-electronics/15314/10244129) | \* Affordable ($9.25) with a standard 2.1mm x 5.5mm center-positive barrel plug <br>\* Lightweight and compact wall plug <br> \* Documented specifications on DigiKey and SparkFun | * Fails the Power Budget requirement: our system draws 992 mA peak (1,240 mA with 25% margin) when the pump, valve, and 5V rail run simultaneously, exceeding 650 mA and causing voltage brownouts <br>\* Insufficient current headroom for motor startup spikes |
-| ![](image_psu3.jpg)<br>\* Option 3. <br>\* MPD BH26AASF 6xAA Alkaline Battery Holder (9V Nominal) <br>\* $1.23/each (plus 6x AA cells) <br>\* [Link to product](https://www.digikey.com/en/products/detail/mpd-memory-protection-devices/BH26AASF/470766) | \* Very inexpensive hardware ($1.23) allowing untethered portable operation <br>\* Provides ~2,500 mAh capacity with 6 fresh 1.5V AA alkaline batteries <br> \* Includes datasheet and mechanical drawing on DigiKey | * Voltage sags below the 7.0V minimum dropout threshold of the L7805CV regulator as AA cells discharge under a ~1A pump/solenoid load <br>\* Requires batteries to be replaced frequently during testing and live class grading |
+| ![](image_psu1.jpg)<br>Option 1.<br> Bel Power Solutions SMI18-9-V-P5 9V 2.0A (18W) AC/DC Wall Adapter<br>$23.11/each<br>[link to product](https://www.digikey.com/en/products/detail/bel-power-solutions/SMI18-9-V-P5/5417773) | \* Supplies up to 2,000 mA at 9V DC, which is more than enough <br>\* Standard 2.1mm x 5.5mm center-positive barrel plug connects directly to a PCB barrel jack<br>\* Complete UL/CE safety certifications and DigiKey datasheet | \* Costs $23.11 <br>\* Requires connection to a 120V AC wall outlet |
+| ![](image_psu2.jpg)<br>\* Option 2. <br>\* SparkFun TOL-15314 9V 650mA AC/DC Wall Adapter <br>\* $9.25/each <br>\* [Link to product](https://www.digikey.com/en/products/detail/sparkfun-electronics/15314/10244129) | \* Affordable ($9.25) with a standard 2.1mm x 5.5mm center-positive barrel plug <br>\* Lightweight and compact wall plug <br> \* Documented specifications on DigiKey and SparkFun | * Fails the Power Budget requirement <br>\* Insufficient current headroom for motor startup spikes |
+| ![](image_psu3.jpg)<br>\* Option 3. <br>\* MPD BH26AASF 6xAA Alkaline Battery Holder (9V Nominal) <br>\* $1.23/each (plus 6x AA cells) <br>\* [Link to product](https://www.digikey.com/en/products/detail/mpd-memory-protection-devices/BH26AASF/470766) | \* Very inexpensive hardware ($1.23) allowing untethered portable operation <br>\* Provides ~2,500 mAh capacity with 6 fresh 1.5V AA alkaline batteries <br> \* Includes datasheet and mechanical drawing on DigiKey | * Voltage sags below the 7.0V minimum dropout threshold of the L7805CV regulator as AA cells discharge under a ~1A pump/solenoid load <br>\* Requires batteries to be replaced frequently |
+
+*Table 8: 9V External Power Supply component selection*
 
 **Choice:** Option 1: Bel Power Solutions SMI18-9-V-P5 9V 2.0A (18W) AC/DC Wall Adapter
 
 **Rationale:** Option 1 provides enough power to have a safety margin.
+
+# Pin Assignments
+
+These are all the pins assigned on my microcontroller for all of the above components as well as debugging and communication components.
+
+| Pin | Subsystem | MCC setting | Connects to |
+| :--- | :--- | :--- | :--- |
+| **RD1** | Buttons | Digital input | SW1 push button, 10k hardware pull-down (R13) with RC debounce (C6), active high |
+| **RD2** | Debug | Digital output, start low | D1 debug LED (Blue), 330Ω current-limiting resistor (R12), active high |
+| **RA0** | Pressure Sensor | Analog input (ADC) | `Amplified_Pressure` (Instrumentation Op-Amp U5C DC output) |
+| **RA1** | Pressure Sensor | Analog input (ADC) | `Pressure_Signal` (Band-pass filter Op-Amp U5D AC output) |
+| **RB0** | Pump Control | Digital output, start low | `Pump_In` (FAN8100N U3 Pin 11 `FORWARDA`), active high |
+| **RB3** | Valve Control | Digital output, start low | `Valve_In` (FAN8100N U3 Pin 2 `FORWARDB`), active high |
+| **RD6** | LCD | Digital output, start low | LCD RS (Pin 4) |
+| **RD5** | LCD | Digital output, start low | LCD E (Pin 6) |
+| **RB5** | LCD | Digital output, start low | LCD DB4 (Pin 11) |
+| **RF7** | LCD | Digital output, start low | LCD DB5 (Pin 12) |
+| **RF6** | LCD | Digital output, start low | LCD DB6 (Pin 13) |
+| **RF5** | LCD | Digital output, start low | LCD DB7 (Pin 14) |
+| **RA2** | External Comm | Analog input / Analog output | J2 External Board Connector (Pin 6) |
+| **RA5** | External Comm | Analog input / Analog output | J2 External Board Connector (Pin 7) |
+| **GND** | Ground | | Board `Earth` net (Pins 15, 24, 33, 42, 52, and J2 Pin 8) |
