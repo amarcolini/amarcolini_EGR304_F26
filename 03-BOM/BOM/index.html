@@ -603,18 +603,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Bill of Materials
     </span>
   </a>
   
@@ -818,18 +809,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Bill of Materials
     </span>
   </a>
   
@@ -861,56 +843,335 @@
   <h1>Bill of Materials</h1>
 
 <h2 id="overview">Overview</h2>
-<p>written context</p>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials Example (as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<p>Below is my complete bill of materials for this project. Only a few major electronic components were needed to be purchased, as many common components
+were readily available on hand. The total cost of new parts was around $35.09.</p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
+<p><em>Table 1: Bill of Materials</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
-<th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
-<th style="text-align: left;"><strong>Manufacturer #</strong></th>
-<th style="text-align: left;"><strong>Vendor Link</strong></th>
-<th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th>Part Name / Description</th>
+<th style="text-align: right;">Qty</th>
+<th style="text-align: right;">Unit Cost</th>
+<th style="text-align: right;">Total Cost</th>
+<th>Manufacturer</th>
+<th>Manufacturer Part #</th>
+<th>Supplier</th>
+<th>Supplier Part #</th>
+<th>Schematic Ref.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
-<td style="text-align: left;">U1</td>
+<td>Pressure Sensor, -50 to 300 mmHg, vented gauge</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$8.18</td>
+<td style="text-align: right;">$16.36</td>
+<td>Amphenol Advanced Sensors (NovaSensor)</td>
+<td>NPC-120T</td>
+<td>DigiKey</td>
+<td>235-1445-1-ND</td>
+<td>U4</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td>16×2 Character LCD, Yellow/Green</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$7.83</td>
+<td style="text-align: right;">$7.83</td>
+<td>Newhaven Display Intl</td>
+<td>NHD-0216K1Z-FL-YBW</td>
+<td>DigiKey</td>
+<td>NHD-0216K1Z-FL-YBW-ND</td>
+<td>U6</td>
+</tr>
+<tr>
+<td>Air Pump and Vacuum DC Motor</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$7.95</td>
+<td style="text-align: right;">$7.95</td>
+<td>Adafruit Industries LLC</td>
+<td>4699</td>
+<td>DigiKey</td>
+<td>1528-4699-ND</td>
+<td>J4</td>
+</tr>
+<tr>
+<td>6 V Air Valve with 2-pin JST PH Connector</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$2.95</td>
+<td style="text-align: right;">$2.95</td>
+<td>Adafruit Industries LLC</td>
+<td>4663</td>
+<td>DigiKey</td>
+<td>1528-4663-ND</td>
+<td>J5</td>
+</tr>
+<tr>
+<td>Unpolarized Capacitor, 330 nF, 16 V</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>C1, C9</td>
+</tr>
+<tr>
+<td>Unpolarized Capacitor, 100 nF, 16 V</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>C2, C3, C6, C7, C8, C11, C13</td>
+</tr>
+<tr>
+<td>Unpolarized Capacitor, 100 nF, 16 V</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>C4, C5</td>
+</tr>
+<tr>
+<td>Unpolarized Capacitor, 22 nF, 16 V</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>C10</td>
+</tr>
+<tr>
+<td>Unpolarized Capacitor, 220 µF, 16 V</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>C12</td>
+</tr>
+<tr>
+<td>Blue LED</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>1.5 A Fuse</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>F1</td>
+</tr>
+<tr>
+<td>DC Barrel Jack</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>J1</td>
+</tr>
+<tr>
+<td>2×4 External Board Connector</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>J2</td>
+</tr>
+<tr>
+<td>1×6 Extra Header Pins</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>J3</td>
+</tr>
+<tr>
+<td>1×2 Screw Terminal</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>J4, J5</td>
+</tr>
+<tr>
+<td>2-pole Open Jumper, Motor Isolation</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>JP1</td>
+</tr>
+<tr>
+<td>Test Points</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>TP1–TP8</td>
+</tr>
+<tr>
+<td>Resistor, 1 kΩ, 1/8 W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Resistor, 47 kΩ, 1/8 W</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R2, R3</td>
+</tr>
+<tr>
+<td>Resistor, 10 kΩ, 1/8 W</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R4, R5, R6, R7, R8, R9, R13, R14</td>
+</tr>
+<tr>
+<td>Resistor, 100 kΩ, 1/8 W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R10</td>
+</tr>
+<tr>
+<td>Resistor, 1 MΩ, 1/8 W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R11</td>
+</tr>
+<tr>
+<td>Resistor, 330 Ω, 1/8 W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>R12</td>
+</tr>
+<tr>
+<td>DPST Switch</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>SW1, SW2</td>
+</tr>
+<tr>
+<td>PIC18F57Q43 Curiosity Nano</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Microchip</td>
+<td>PIC18F57Q43 Curiosity Nano</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>U1</td>
+</tr>
+<tr>
+<td>1 MHz Low-Power Quad Op-Amp</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Microchip</td>
+<td>MCP6004-I/P</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>U5</td>
+</tr>
+<tr>
+<td>5 V Fixed Linear Regulator</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>STMicroelectronics</td>
+<td>L7805</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>U2</td>
+</tr>
+<tr>
+<td>2-Channel DC Motor Driver</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Fairchild Semiconductor</td>
+<td>FAN8100N</td>
+<td>Class Supplies</td>
+<td>N/A</td>
+<td>U3</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
-<ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
-</ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials Example (as Image)</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../BOM-Screenshot.png" data-desc-position="bottom"><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:"></a>
-<strong>Figure 2:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
 
 
 
