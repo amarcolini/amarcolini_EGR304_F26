@@ -4,7 +4,8 @@ title: PCB Design
 
 ## Overview
 
-Below is the finished PCB design for the project.
+Below is the finished PCB design for the project. The design of the board exactly follows the schematic, and fits all components within
+a 100x100mm area. All passive components (resistors, capacitors, etc.) were selected to be through-hole components for convenience.
 
 ![PCB](Final_Board_PCB1.png){style width:"350" height:"300;"}
 
