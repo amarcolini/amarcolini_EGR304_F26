@@ -1,5 +1,5 @@
 ---
-title: PCB
+title: PCB Design
 ---
 
 ## Overview
