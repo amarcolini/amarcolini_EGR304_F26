@@ -11,9 +11,17 @@ a 100x100mm area. All passive components (resistors, capacitors, etc.) were sele
 
 **Figure 1:** A render of the PCB design.
 
+![PCB](Final_Board_PCB3.png){style width:"350" height:"300;"}
+
+**Figure 1:** The top copper layer of the PCB design.
+
+![PCB](Final_Board_PCB4.png){style width:"350" height:"300;"}
+
+**Figure 1:** The bottom copper layer of the PCB design.
+
 ![PCB](Final_Board_PCB2.png){style width:"350" height:"300;"}
 
-**Figure 2:** The PCB design.
+**Figure 2:** The complete PCB design.
 
 ## Resouces
 
